@@ -1,0 +1,24 @@
+version: '3.5'
+services:
+  database:
+    container_name: mb
+    ports:
+      - "5432:5531"
+    environment:
+      POSTGRES_PASSWORD: erutus91
+      POSTGRES_USER: rotar
+    image: postgres:14.0-alpine
+    volumes:
+      - ./var/lib/postgresql/data
+        - ./createdb.sh:/docker-entrypoint-initdb.d/create_CREATE SEQUENCE hibernate_sequence START 1;createdb.sh
+  weathermonitoring:
+    image: weather
+    build: ./
+    ports:
+      - "8082:8082"
+    depends_on:
+      - database
+
+volumes:
+  apps-volumes:
+
