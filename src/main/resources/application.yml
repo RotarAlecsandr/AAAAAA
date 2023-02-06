@@ -1,10 +1,10 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   datasource:
     username: rotar
-    url: jdbc:postgresql://localhost:5433/mb
+    url: jdbc:postgresql://localhost:5432/mb
     driverClassName: org.postgresql.Driver
     password: erutus91
   jpa:
